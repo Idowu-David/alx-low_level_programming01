@@ -9,9 +9,9 @@ int main(void)
 {
 	int numX; /* variable for the base 16 */
 
-	for (numX = 48; numX <= 70; numX++)
+for (numX = 48; numX <= 102; numX++)
 	{
-		if (numX <= 57 || numX >= 65)
+		if (numX <= 57 || numX >= 97)
 		{
 			putchar(numX);
 		}
