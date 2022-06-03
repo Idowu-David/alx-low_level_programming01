@@ -3,7 +3,6 @@
 #include <stdio.h>
 /**
  * main - Prints a positive or negative or zero.
- * @n: random number.
  *
  * Return: Returns (0), Success.
  */
