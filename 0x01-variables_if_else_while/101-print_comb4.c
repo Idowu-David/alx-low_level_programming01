@@ -21,12 +21,11 @@ int main(void)
 				/* condition, if none of the numbers are equal*/
 				if (num1 != num2 || num1 != num3 || num2 != num3)
 				{
-					/*conditon, if none of the first and second numbers are equal, continue, if true.*/
+					/*conditon, if num3 is the lease, continue, if true.*/
 					if (num1 > num2 || num2 > num3)
 					{
 						continue;
 					}
-					/*checks if first digit, second digit or third digits are equal, continue, if true.*/
 					else if (num1 == num2 || num2 == num3)
 					{
 						continue;
@@ -37,7 +36,7 @@ int main(void)
 						putchar(num1);/*print the first digit*/
 						putchar(num2);/*print the second digit*/
 						putchar(num3);/*print the third digit*/
-						if (num1 != 55)/*trying not to print , for the last digit*/
+						if (num1 != 55)
 						{
 							putchar(',');
 							putchar(' ');
