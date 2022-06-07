@@ -10,7 +10,7 @@ void print_alphabet_x10(void)
 	int alp, i;
 
 	i = 0;
-	while (i <= 10)
+	while (i <= 9)
 	{
 		for (alp = 97; alp <= 122; alp++)
 		{
