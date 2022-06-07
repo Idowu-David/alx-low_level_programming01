@@ -13,6 +13,6 @@ int _abs(int n)
 	bool2 = (n < 0);
 	booldiff = (bool1 - bool2);
 	abs = (n * booldiff);
-	_putchar(_abs(n) + '0');
+	_putchar(abs + '0');
 	return (0);
 }
