@@ -2,6 +2,7 @@
 /**
  * main - prints the letter of _putchar
  *
+ * Return: Return 0, Success.
  */
 int main(void)
 {
