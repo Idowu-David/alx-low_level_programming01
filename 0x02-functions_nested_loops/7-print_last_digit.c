@@ -20,5 +20,10 @@ int print_last_digit(int num)
 		_putchar(last + '0');
 		return (last);
 	}
+	else if (last == 0)
+	{
+		_putchar(last + '0');
+		return (last);
+	}
 	return (0);
 }
