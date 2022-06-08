@@ -11,13 +11,13 @@ int main(void)
 
 	num[0] = 1;
 	num[1] = 2;
-	printf("%ld, %ld,", num[0], num[1]);
+	printf("%ld, %ld, ", num[0], num[1]);
 
-	for (i = 2; i <= 48; i++)
+	for (i = 2; i <= 49; i++)
 	{
 		num[i] = num[i - 1] + num[i - 2];
 		printf("%lu", num[i]);
-		if (i <= 47)
+		if (i <= 48)
 		{
 			printf(", ");
 		}
