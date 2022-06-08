@@ -1,18 +1,25 @@
 #include "main.h"
 /**
- * _abs - prints the absolute value of a number.
- * @n: number whose absolute iss to be printed.
+ * _abs - prints the absolute value
+ * of a number.
+ * @num: number to be checked
  *
  * Return: Returns 0, if success.
  */
-int _abs(int n)
+int _abs(int num)
 {
-	int bool1, bool2, booldiff, abs;
-
-	bool1 = (n > 0);
-	bool2 = (n < 0);
-	booldiff = (bool1 - bool2);
-	abs = (n * booldiff);
-	_putchar(abs + '0');
+	if (num > 0)
+	{
+		return (num);
+	}
+	else if (num == 0)
+	{
+		return (num);
+	}
+	else if (num < 0)
+	{
+		num = -num;
+		return (num);
+	}
 	return (0);
 }
