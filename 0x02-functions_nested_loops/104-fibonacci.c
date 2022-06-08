@@ -10,7 +10,7 @@ int main(void)
 	unsigned long int i;
 	unsigned long int num1 = 1;
 	unsigned long int num2 = 2;
-	unsigned long int num3 = 1000000000;
+	unsigned long int l = 1000000000;
 	unsigned long int num11;
 	unsigned long int num12;
 	unsigned long int num21;
