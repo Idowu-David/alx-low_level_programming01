@@ -6,13 +6,13 @@
  * Return: Returns 1, if c is uppercase.
  * Returns 0, if otherwise.
  */
-int _isupper(int c);
+int _isupper(int c)
 {
-	if (c >= 65 && c <= 122)
+	if (c >= 65 && c <= 90)
 	{
 		return (1);
 	}
-	else
+	else if (c >= 97 && c <= 122)
 	{
 		return (0);
 	}
