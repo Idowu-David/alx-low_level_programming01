@@ -11,14 +11,6 @@ void print_diagonal(int n)
 
 	for (row = 0; row < n; row++)
 	{
-		if (n > 0)
+		for (col = 0; col <= row; col++)
 		{
-			for (col = 0; col <= row; col++)
-			{
-				_putchar(' ');
-			}
-			_putchar('#');
-			_putchar('\n');
-		}
-	}
-}
+			_
