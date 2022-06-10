@@ -13,7 +13,7 @@ int main(void)
 
 	for (num = 1; num <= 100; num++)
 	{
-		if (num > 1 && num <= 99)
+		if (num > 1 && num <= 100)
 		{
 			printf(" ");
 		}
