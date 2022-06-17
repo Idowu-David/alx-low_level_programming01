@@ -11,8 +11,8 @@ char *leet(char *s)
 	char ch1[] = "aeotl";
 	char ch2[] = "AEOTL";
 	char num[] = "43071";
-
 	int i, j;
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0; j < 5; j++)
