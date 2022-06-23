@@ -6,6 +6,9 @@
  * @num: number
  * @checker: checker - as a divisor through the number.
  * @i: checker2
+ * 
+ * Return: returns 1, if number is prime
+ * returns 0 if number is not prime.
  */
 
 int _is_prime(int num, int checker, int i)
@@ -66,7 +69,7 @@ int _sqrt(int n, int checker)
 }
 
 /**
- * _sqrt_recursion: returns the square root for the number.
+ * _sqrt_recursion - returns the square root for the number.
  * @n: number
  *
  * Return: returns the root.
