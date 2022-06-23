@@ -1,4 +1,3 @@
-
 #include "main.h"
 /**
  * _is_prime - checks if a number is prime
@@ -16,9 +15,9 @@ int _is_prime(int num, int checker, int i)
 		return (1);
 	i = (num % checker);
 	if (i != 0)
-		_is_prime(num, checker + 1, 1);
+		return (_is_prime(num, checker + 1, 1));
 	else
-		return 0;
+		return (0);
 }
 /**
  * is_prime_number - checks if a number is prime
@@ -29,9 +28,5 @@ int _is_prime(int num, int checker, int i)
  */
 int is_prime_number(int n)
 {
-	int num;
-
-	num = _is_prime(n, 2, 1);
-	return (num);
-	return 0;
+	return (_is_prime(n, 2, 1));
 }
