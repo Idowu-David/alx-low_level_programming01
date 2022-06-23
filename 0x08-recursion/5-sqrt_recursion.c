@@ -19,16 +19,18 @@ int _is_prime(int num, int checker, int i)
 		return (1);
 	i = (num % checker); /**
 			      * get the remainder when
-			      * number divides checker*/
+			      * number divides checker
+			      */
 	if (i != 0) /**
 		     * if the remainder is not zero, call the
 		     * function recursively to start all over
-		     * increment checker */
+		     * increment checker
+		     */
 		return (_is_prime(num, checker + 1, 1));
-	else /**
-	      * if none of the conditions are true, number is not prime
-	      */
-		return (0);
+ /**
+  * if none of the conditions are true, number is not prime
+  */
+	return (0);
 }
 
 /**
@@ -58,8 +60,9 @@ int _sqrt(int n, int checker)
 	}
 	else
 	{
-		return (sqrt(n, checker + 1));
+		return (_sqrt(n, checker + 1));
 	}
+	return (0);
 }
 
 /**
@@ -75,7 +78,7 @@ int _sqrt_recursion(int n)
 	num1 = _is_prime(n, 2, 1); /* call the _is_prime func*/
 	num2 = _sqrt(n, 1); /* call the sqrt func */
 	if (num1 == 1)
-		return -1;
+		return (-1);
 	return (num2);
 	return (0);
 }
