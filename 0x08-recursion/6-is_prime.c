@@ -25,7 +25,7 @@ int _is_prime(int num, int checker, int i)
                 if (i != 0)
                         _is_prime(num, checker + 1, 1);
                 else
-                        return 0;
+                        return (0);
         }
+	return (0);
 }
-
