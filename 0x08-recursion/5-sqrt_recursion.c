@@ -6,7 +6,6 @@
  * @num: number
  * @checker: checker - as a divisor through the number.
  * @i: checker2
- * 
  * Return: returns 1, if number is prime
  * returns 0 if number is not prime.
  */
