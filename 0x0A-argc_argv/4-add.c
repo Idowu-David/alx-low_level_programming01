@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			numCheck = Isnumber(argv[i]);
+			numCheck = isnumber(argv[i]);
 			if (numCheck == 1)
 			{
 				sum += atoi(argv[i]);
