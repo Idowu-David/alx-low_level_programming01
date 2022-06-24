@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 
 	if (argc == 3)
 	{
-		for (int i = 1; i <= 2; i++)
+		for (i = 1; i <= 2; i++)
 		{
 			mul *= atoi(argv[i]);
 		}
