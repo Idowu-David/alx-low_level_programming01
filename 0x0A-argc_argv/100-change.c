@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
 
 /**
@@ -39,7 +40,7 @@ int main(int argc, char const **argv)
 }
 
 /**
- * isInteger - checks if s is an integer
+ * isinteger - checks if s is an integer
  * @str: string to check
  * Return: 0 or 1
  */
