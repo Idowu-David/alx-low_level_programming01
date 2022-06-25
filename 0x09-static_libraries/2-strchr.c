@@ -1,27 +1,22 @@
 #include "main.h"
-#define NULL 0
 /**
- * _strchr - locates the first occurence of a character in a string.
- * @s: string
- * @c: character
- *
- * Return: pointer to the character in string.
- */
+ * *_strcat - concatenates two strings
+ * @dest: pointer destination
+ * @src: pointer source
+ * Return: void
+*/
 
-char *_strchr(char *s, char c)
+char *_strcat(char *dest, char *src)
 {
-	int i = 0;
+int a = -1, i;
+for (i = 0; dest[i] != '\0'; i++)
+;
 
-	while (s[i] != '\0' && s[i] != c)
-	{
-		i++;
-	}
-	if (s[i] == c)
-	{
-		return (&s[i]);
-	}
-	else
-	{
-		return (NULL);
-	}
+do {
+	a++;
+	dest[i] = src[a];
+	i++;
+} while (src[a] != '\0');
+
+return (dest);
 }
