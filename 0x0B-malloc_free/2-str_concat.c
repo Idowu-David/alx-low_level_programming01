@@ -12,9 +12,14 @@ char *str_concat(char *s1, char *s2)
 {
 	int a, i, j, k, n1, n2;
 	char *str;
+	char *null = "";
 
 	n1 = 0;
 	n2 = 0;
+	if (s1 == NULL)
+		s1 = null;
+	if (s2 == NULL)
+		s2 = null;
 	while (s1[n1] != '\0')
 		n1++;
 	while (s2[n2] != '\0')
