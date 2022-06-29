@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /** rev_string - reverses a string
  * @s: string.
@@ -14,6 +15,7 @@ char *rev_string(char *s)
 	len = 0;
 	while (s[len] != '\0')
 		len++;
+	rev = (char *)malloc(len * (sizeof(char) + 1));
 	for (i = (len - 1), j = 0; i >= 0; i--, j++)
 	{
 		rev[j] = s[i];
@@ -39,11 +41,8 @@ int check_pal(char *s1, char *s2)
 	/* if string reaches end, strings are same */
 	if (*s1 == '\0')
 		return (1);
-	/* if string are same, call function again */
-	if (*s1 == *s2)
-	{
-		return check_pal((s1 + 1), (s2 + 1));
-	}
+	/* call function again */
+	return check_pal((s1 + 1), (s2 + 1));
 }
 
 /**
