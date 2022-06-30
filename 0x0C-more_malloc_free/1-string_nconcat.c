@@ -15,12 +15,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int i, j, a, len1, len2, sum;
 	char *str;
 	char *null = "";
-	len1 = strlen(s1);
-	len2 = strlen(s2);
 	if (s1 == NULL)
 		s1 = null;
 	if (s2 == NULL)
 		s2 == null;
+	len1 = strlen(s1);
+	len2 = strlen(s2);
 	/* get the length of the two strings */
 	sum = len1 + len2;
 	/* allocate memory space of (sum) to the pointer */
