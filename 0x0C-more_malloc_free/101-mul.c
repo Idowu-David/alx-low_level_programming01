@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 				exit(98);
 			}
 		}
-		printf("%d\n", mul);
+		printf("%ld\n", mul);
 	}
 	/* if argument passed is not 3, print error */
 	else
