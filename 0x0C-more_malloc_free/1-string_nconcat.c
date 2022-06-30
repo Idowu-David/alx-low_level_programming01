@@ -22,10 +22,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = null;
 	len1 = strlen(s1);
 	len2 = strlen(s2);
-	/* get the length of the two strings */
-	sum = len1 + len2;
-	/* allocate memory space of (sum) to the pointer */
-	str = malloc(sum * sizeof(char));
 	/* Check if memory is successfully allocated */
 	if (str == NULL)
 		return NULL;
@@ -38,6 +34,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	/* check if the specified byte is greater than the lenght of s2 */
 	if (n >= len2)
 	{
+		n = len2;
+		sum = len2 + len1;
+		/* allocate memory space for str */
+		str = malloc(sum * sizeof(char) + 1);
 		/* copy all the strings in s2 into str */
 		for (j = len1, a = 0; s2[a] != '\0'; j++, a++)
 		{
@@ -48,6 +48,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	/* if the specified string is less than lenght of s2 */
 	else if (n < len2)
 	{
+		/* allocate the lenght for str */
+		str = malloc((len1 + len2) * sizeof(char) + 1);
 		/* copy the specified number of bytes from s2 */
 		for (j = len1, a = 0; s2[a] != s2[n]; j++, a++)
 		{
