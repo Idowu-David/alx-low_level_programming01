@@ -23,7 +23,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	len1 = strlen(s1);
 	len2 = strlen(s2);
 	sum = len1 + len2;
-	str = malloc(sum * sizeof(char) + 1);
+	str = malloc((sum + 1) * sizeof(char));
 	/* Check if memory is successfully allocated */
 	if (str == NULL)
 		return NULL;
