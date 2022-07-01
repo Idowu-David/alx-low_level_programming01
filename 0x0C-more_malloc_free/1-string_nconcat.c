@@ -14,7 +14,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int i, j, a, sum;
 	unsigned int len1, len2;
 	char *str;
-
+	
+	len1 = len2 = 0;
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
@@ -40,7 +41,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		{
 			str[j] = s2[a];
 		}
-		str[j] = '\0'
+		str[j] = '\0';
 	}
 	/* if the specified string is less than length of s2 */
 	else if (n < len2)
@@ -48,6 +49,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		str = malloc((n + len1) * sizeof(char) + 1);
 		if (str == NULL)
 			return (NULL);
+		for (i = 0; s1[i] != '\0'; i++)
+		{
+			str[i] = s1[i];
+		}
+
 		for (j = len1, a = 0; s2[a] != s2[n]; j++, a++)
 		{
 			str[j] = s2[a];
