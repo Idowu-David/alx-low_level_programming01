@@ -51,4 +51,4 @@ int main(void)
     simple_print_buffer(p, 98);
     free(p);
     return (0);
-
+}
