@@ -11,8 +11,7 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int i, j, a, sum;
-	unsigned int len1, len2;
+	unsigned int i,len1, len2;
 	char *str;
 
 	if (s1 == NULL)
@@ -24,35 +23,19 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s2[len2] != '\0')
 		len2++;
 	sum = len1 + len2;
-	/* check if the specified byte is greater than the length of s2 */
-	if (n >= len2)
+	str = malloc(sum * sizeof(char) + 1);
+	if (str == NULL)
+		return (NULL);
+	/* copy s1 into str */
+	for (i = 0; s1[i] != '\0'; i++)
 	{
-		str = malloc(sum * sizeof(char) + 1);
-		if (str == NULL)
-			return (NULL);
-		/* copy s1 into str */
-		for (i = 0; s1[i] != '\0'; i++)
-		{
-			str[i] = s1[i];
-		}
-		/*copy all the strings in s2 into str */
-		for (j = len1, a = 0; s2[a] != '\0'; j++, a++)
-		{
-			str[j] = s2[a];
-		}
-		str[j] = '\0'
+		str[i] = s1[i];
 	}
-	/* if the specified string is less than length of s2 */
-	else if (n < len2)
+	/*copy all the strings in s2 into str */
+	for (; i < (len1 + n); i++)
 	{
-		str = malloc((n + len1) * sizeof(char) + 1);
-		if (str == NULL)
-			return (NULL);
-		for (j = len1, a = 0; s2[a] != s2[n]; j++, a++)
-		{
-			str[j] = s2[a];
-		}
-		str[j] = '\0';
+		str[i] = s2[i - len1];
 	}
+	str[i] = '\0';
 	return (str);
 }
