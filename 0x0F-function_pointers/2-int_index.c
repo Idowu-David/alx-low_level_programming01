@@ -17,20 +17,18 @@ int int_index(int *array, int size, int (*cmp)(int))
 	/* else, element is not found. */
 	int i;
 
-	if (size <= 0)
+	if (size <= 0 || array == NULL || cmp == NULL)
 		return (-1);
-	if (array != NULL || cmp != NULL)
+
+	for (i = 0; i < size; i++)
 	{
-		for (i = 0; i < size; i++)
+		if (cmp(array[i]))
 		{
-			if (cmp(array[i]))
-			{
-				flag = 1;
-				return (i);
-			}
+			flag = 1;
+			return (i);
 		}
-		if (flag == 0)
-			return (-1);
 	}
+	if (flag == 0)
+		return (-1);
 	return (0);
 }
