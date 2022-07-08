@@ -2,7 +2,7 @@
 #include "variadic_functions.h"
 int main()
 {
-	print_numbers("; ", 5, 30, 938, -12309, 38730, 0);
+	print_numbers(NULL, 5, 30, 938, 2309, 38, 0);
 
 	return (0);
 }
