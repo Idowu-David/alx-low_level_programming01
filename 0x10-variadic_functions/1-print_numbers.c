@@ -13,8 +13,7 @@
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list args;
-	unsigned int i;
-	int collector;
+	unsigned int i, collector;
 
 	va_start(args, n);
 
