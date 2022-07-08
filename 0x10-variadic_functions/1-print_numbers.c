@@ -18,8 +18,8 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	va_start(args, n);
 
-	if (n <= 0)
-		return;
+	if (n == 0)
+		printf(" ");
 	for (i = 0; i < n; i++)
 	{
 		collector = va_arg(args, int);
