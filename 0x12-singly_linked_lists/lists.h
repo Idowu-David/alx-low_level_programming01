@@ -9,19 +9,17 @@
  *
  * Description: singly linked list node structure
  */
-
-/* Standard Libraries */
-#include <stdio.h>
-#include <stddef.h>
-#include <stdlib.h>
-
-/* Struct */
 typedef struct list_s
 {
     char *str;
     unsigned int len;
     struct list_s *next;
 } list_t;
+
+/* Standard Libraries */
+#include <stdio.h>
+#include <stddef.h>
+#include <stdlib.h>
 
 /* Prototype of _putchar function */
 int _putchar(char c);
