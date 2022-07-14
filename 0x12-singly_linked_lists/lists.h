@@ -23,6 +23,9 @@ typedef struct list_s
     struct list_s *next;
 } list_t;
 
+/* Prototype of _putchar function */
+int _putchar(char c);
+
 /* Mandatory task function prototypes */
 size_t print_list(const list_t *h);
 size_t list_len(const list_t *h);
