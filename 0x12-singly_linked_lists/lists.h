@@ -9,17 +9,6 @@
  *
  * Description: singly linked list node structure
  */
-<<<<<<< HEAD
-
-/* Standard Libraries */
-#include <stdio.h>
-#include <stddef.h>
-#include <stdlib.h>
-#include <string.h>
-
-/* Struct */
-=======
->>>>>>> b6fc4765cbccae65f90c94b0c5503cb24e522b88
 typedef struct list_s
 {
     char *str;
