@@ -1,0 +1,5 @@
+# Files to ignore
+*main.c
+a.out
+*.swp
+
