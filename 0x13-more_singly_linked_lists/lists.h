@@ -7,7 +7,6 @@
 #include <stdio.h>
 #include <unistd.h>
 
-/* Structure for node */
 /** struct listint_s - singly linked list
  * @n: integer
  * @next: points to the next node
