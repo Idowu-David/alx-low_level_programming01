@@ -11,7 +11,10 @@ size_t print_list(const list_t *h)
 {
 	size_t count = 0;
 
-	while (h != NULL)
+:x
+git add .
+git commit -m "Truncated"
+git push
 	{
 		if (h->str != NULL)
 		{
@@ -24,5 +27,5 @@ size_t print_list(const list_t *h)
 		count++;
 		h = h->next;
 	}
-	return (count);
+	return count;
 }
