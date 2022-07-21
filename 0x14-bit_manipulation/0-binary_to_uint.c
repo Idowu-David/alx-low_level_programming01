@@ -17,7 +17,7 @@ unsigned int binary_to_uint(const char *b)
 	decimal = 0;
 	power = 1;
 	if (b == NULL)
-		return (1);
+		return (0);
 	if (b != NULL)
 	{
 		int_check = binary_int_check(b);
