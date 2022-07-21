@@ -30,3 +30,22 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	}
 	return (ptr->next);
 }
+
+/**
+ * listint_len - gets the number of node in a linked list.
+ * @h: pointer to the first node.
+ *
+ * Return: returns the number of nodes in the linked list.
+ */
+
+size_t listint_len(const listint_t *h)
+{
+	int count = 0;
+
+	while (h)
+	{
+		count++;
+		h = h->next;
+	}
+	return (count);
+}
