@@ -11,15 +11,14 @@ int sum_listint(listint_t *head)
 {
 	unsigned int sum = 0;
 	listint_t *ptr;
-	
+
 	ptr = head;
-	if (head == NULL)
+	if (ptr == NULL)
 		return (0);
-	while (head != NULL)
+	while (ptr != NULL)
 	{
-		sum += head->n;
-		ptr = head->next;
-		head = ptr;
+		sum += ptr->n;
+		ptr = ptr->next;
 	}
-	return (count);
+	return (sum);
 }

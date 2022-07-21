@@ -7,7 +7,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
-/** struct listint_s - singly linked list
+/**
+ * struct listint_s - singly linked list
  * @n: integer
  * @next: points to the next node
  *
@@ -18,7 +19,7 @@ typedef struct listint_s
 {
 	int n;
 	struct listint_s *next;
-}listint_t;
+} listint_t;
 
 /* Function Prototype for _putchar */
 int _putchar(char c);
