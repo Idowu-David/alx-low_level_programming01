@@ -15,6 +15,8 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	listint_t *ptr;
 
 	ptr = head;
+	if (head == NULL)
+		return (NULL);
 	/**
 	 * call the listint_len function to get the number of nodes in the given list.
 	 * if the index passed is greater than the number of nodes in the function,
