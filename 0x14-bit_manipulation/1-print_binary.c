@@ -1,22 +1,23 @@
 #include "main.h"
 
 /**
- * print_binary - prints the binary representation of a number.
- * @n: number in denary.
+ * print_binary - Prints the binary representation of a number
+ * @n: Integer number to be printed in binary form
  *
- * Return: void.
+ * Return: Nothing (void)
  */
-
 void print_binary(unsigned long int n)
 {
-	unsigned int check = 32768;
-
-	while (check > 0)
+	if (n == 0)
 	{
-		if ((n & check) == 0)
-			_putchar('0');
-		else
-			_putchar('1');
-		check = check >> 1;
+		_putchar('0');
+		return;
 	}
+	else if (n == 1)
+	{
+		_putchar ('1');
+		return;
+	}
+	print_binary(n >> 1);
+	_putchar('0' + (n & 1));
 }
