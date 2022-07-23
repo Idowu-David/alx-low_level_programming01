@@ -1,3 +1,4 @@
 # Files to be ignored
 *main.c
 a.out
+*.o
