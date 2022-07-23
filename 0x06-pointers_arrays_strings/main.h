@@ -1,5 +1,10 @@
 #ifndef MAIN_H
 #define MAIN_H
+
+/* Standard Library */
+#include <string.h>
+
+/* Mandatory Tasks Function Prototype */
 char *_strcat(char *dest, char *src);
 int _putchar(char c);
 char *_strncat(char *dest, char *src, int n);
