@@ -7,29 +7,20 @@
  */
 void print_number(int n)
 {
-	if (n / 10 != 0)
-	{
-		print_number(n / 10);
-		if (n > 0)
-		{
-			_putchar(n % 10 + '0');
-		}
-		else
-		{
-			_putchar(-n % 10 + '0');
-		}
-	}
-	else if ((n / 10 == 0) && (n % 10 != 0) && (n > 0))
-	{
-		_putchar(n % 10 + '0');
-	}
-	else if ((n / 10 == 0) && (n % 10 != 0) && (n <= 0))
+	int div;
+
+	div = 1;
+	if (n < 0)
 	{
 		_putchar('-');
-		_putchar(-n % 10 + '0');
+		n *= -1;
 	}
-	else if (n == 0)
+	while ((n / div) > 9)
+		div *= 10;
+	while (div != 0)
 	{
-		_putchar('0');
+		_putchar('0' + n / div);
+		n %= div;
+		div /= 10;
 	}
 }
