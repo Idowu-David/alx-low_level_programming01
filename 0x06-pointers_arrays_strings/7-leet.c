@@ -1,28 +1,35 @@
 #include "main.h"
 
 /**
- * leet - encodes a string
+ * leet - encodes a string into 1337
  * @s: string
  *
  * Return: returns 0, success.
+ * Letters a and A should be replaced by 4
+ * Letters e and E should be replaced by 3
+ * Letters o and O should be replaced by 0
+ * Letters t and T should be replaced by 7
+ * Letters l and L should be replaced by 1
  */
-char *leet(char *s)
-{
-	char ch1[] = "aeotl";
-	char ch2[] = "AEOTL";
-	char num[] = "43071";
-	int i, j;
 
-	for (i = 0; s[i] != '\0'; i++)
+char *leet(char *str)
+{
+	char *upper, *lower, *num;
+	int len;
+	int index, ind;
+
+	upper = "AEOTL";
+	lower = "aeotl";
+	num = "43071";
+	len = strlen(str);
+	for (index = 0; index < 5; index++)
 	{
-		for (j = 0; j < 5; j++)
+		for (ind = 0; ind < len; ind++)
 		{
-			if (s[i] == ch1[j] || s[i] == ch2[j])
-			{
-				s[i] = num[j];
-				break;
-			}
+			if (str[ind] == upper[index] || str[ind] == lower[index])
+				str[ind] = num[index];
 		}
+		
 	}
-	return (s);
+	return (str);
 }
