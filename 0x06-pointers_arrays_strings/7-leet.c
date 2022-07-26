@@ -2,7 +2,7 @@
 
 /**
  * leet - encodes a string into 1337
- * @s: string
+ * @str: string
  *
  * Return: returns 0, success.
  * Letters a and A should be replaced by 4
@@ -29,7 +29,6 @@ char *leet(char *str)
 			if (str[ind] == upper[index] || str[ind] == lowr[index])
 				str[ind] = num[index];
 		}
-		
 	}
 	return (str);
 }
