@@ -15,7 +15,7 @@ unsigned int _strspn(char *s, char *accept)
 
 	if(s == NULL || accept == NULL)
 		return (0);
-	for (accept_index = 0; accept[accept_index] != '0'; accept_index++)
+	for (accept_index = 0; accept[accept_index] != '\0'; accept_index++)
 	{
 		for (s_index = 0; s[s_index] != ' '; s_index++)
 		{

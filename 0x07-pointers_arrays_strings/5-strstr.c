@@ -16,10 +16,7 @@ char *_strstr(char *haystack, char *needle)
 {
 	int len, count, indexA, indexB, flag, index;
 
-	flag = 0;
 	len = strlen(needle);
-	if (haystack == NULL)
-		return (NULL);
 	for (indexA = 0; needle[indexA] != '\0'; indexA++)
 	{
 		for (indexB = 0; haystack[indexB] != '\0'; indexB++)
