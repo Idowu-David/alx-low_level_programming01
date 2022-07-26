@@ -11,8 +11,8 @@
 char *_strchr(char *s, char c)
 {
 	int index, flag, len;
-	len = strlen(s);
 
+	len = strlen(s);
 	flag = 0;
 	if (s == NULL)
 		return (NULL);
