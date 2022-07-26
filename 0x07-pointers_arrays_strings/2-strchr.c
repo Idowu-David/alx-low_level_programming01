@@ -1,5 +1,5 @@
 #include "main.h"
-#define NULL 0
+
 /**
  * _strchr - locates the first occurence of a character in a string.
  * @s: string
