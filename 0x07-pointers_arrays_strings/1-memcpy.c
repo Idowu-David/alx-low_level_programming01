@@ -2,18 +2,20 @@
 
 /**
  * *_memcpy - copies memory area from src to dest
- * @dest: destination
- * @src: source
- * @n: max byte
- * Return: dest.
+ * @dest: destination which the string is to be copied into
+ * @src: source string
+ * @n: max byte to copy from src string
+ * Return: a pointer to dest.
  */
+
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int i;
+	unsigned int index;
 
-	for (i = 0; n > 0; i++, n--)
+	for (index = 0; src[index] != src[n]; index++)
 	{
-		dest[i] = src[i];
+		dest[index] = src[index];
 	}
+	dest[index] = '\0';
 	return (dest);
 }
