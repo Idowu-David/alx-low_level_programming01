@@ -2,7 +2,7 @@
 
 /**
  * leet - encodes a string into 1337
- * @s: string
+ * @str: string
  *
  * Return: returns 0, success.
  * Letters a and A should be replaced by 4
@@ -14,22 +14,21 @@
 
 char *leet(char *str)
 {
-	char *upper, *lower, *num;
+	char *upper, *lowr, *num;
 	int len;
 	int index, ind;
 
 	upper = "AEOTL";
-	lower = "aeotl";
+	lowr = "aeotl";
 	num = "43071";
 	len = strlen(str);
 	for (index = 0; index < 5; index++)
 	{
 		for (ind = 0; ind < len; ind++)
 		{
-			if (str[ind] == upper[index] || str[ind] == lower[index])
+			if (str[ind] == upper[index] || str[ind] == lowr[index])
 				str[ind] = num[index];
 		}
-		
 	}
 	return (str);
 }
