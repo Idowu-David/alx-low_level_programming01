@@ -10,19 +10,18 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, j, length;
+	int s_index, accept_index;
+	unsigned int count;
 
-	length = 0;
-	for (i = 0; s[i] != ' '; i++)
+	if(s == NULL || accept == NULL)
+		return (0);
+	for (accept_index = 0; accept[accept_index] != '0'; accept_index++)
 	{
-		for (j = 0; accept[j] != '\0'; j++)
+		for (s_index = 0; s[s_index] != ' '; s_index++)
 		{
-			if (accept[j] == s[i])
-			{
-				length++;
-				break;
-			}
+			if (accept[accept_index] == s[s_index])
+				count++;
 		}
 	}
-	return (length);
+	return (count);
 }
