@@ -1,5 +1,12 @@
 #ifndef MAIN_H
 #define MAIN_H
+
+/* Standard Library */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+/* Mandatory task function prototypes */
 char *_memset(char *s, char b, unsigned int n);
 int _putchar(char c);
 char *_memcpy(char *dest, char *src, unsigned int n);
