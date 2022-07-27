@@ -14,31 +14,34 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int len, count, indexA, indexB, flag, index;
+	int len, count, indexA, indexB, i, j;
+	char *hay, *n;
 
+	count = 1;
+	hay = haystack;
+	n = needle;
 	len = strlen(needle);
-	for (indexA = 0; needle[indexA] != '\0'; indexA++)
+	if (haystack != NULL && needle != NULL)
 	{
-		for (indexB = 0; haystack[indexB] != '\0'; indexB++)
+		for (indexA = 0; n[indexA] != '\0'; indexA++)
 		{
-			if (needle[indexA] == haystack[indexB])
+			for (indexB = 0; hay[indexB] != '\0'; indexB++)
 			{
-				flag = 1;
-				break;
+				if (n[indexA] == hay[indexB])
+				{
+					i = indexA;
+					j = indexB;
+					while (n[i] != '\0' && n[i + 1] == hay[j + 1])
+					{
+						count++;
+						i++;
+						j++;
+					}
+					if (count == len)
+						return (&hay[indexB]);
+				}
 			}
 		}
-		if (flag == 1)
-			break;
 	}
-	flag = indexB;
-	index = 0;
-	while (needle[index] != '\0' && needle[index] == haystack[flag])
-	{
-		count++;
-		index++;
-		flag++;
-	}
-	if (count == len)
-		return (&haystack[indexB]);
 	return (NULL);
 }
