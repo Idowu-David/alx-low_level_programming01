@@ -6,7 +6,6 @@
  * @s: string.
  * @b: char.
  * @n: number of bytes.
- * 
  * Return: returns a pointer to the filled memory.
  */
 char *fill_mem(char *s, char b, unsigned int n)
@@ -23,6 +22,8 @@ char *fill_mem(char *s, char b, unsigned int n)
  * _calloc - allocates memory for an array.
  * @nmemb: number of elements
  * @size: size of the array.
+ *
+ * Return: a pointer to a newly allocated memory.
  */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
@@ -30,10 +31,10 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	void *array;
 
 	if (nmemb == 0 || size == 0)
-		return NULL;
+		return (NULL);
 	array = malloc(nmemb * size);
 	if (array == NULL)
-		return NULL;
+		return (NULL);
 	fill_mem(array, 0, (nmemb * size));
 	return (array);
 }

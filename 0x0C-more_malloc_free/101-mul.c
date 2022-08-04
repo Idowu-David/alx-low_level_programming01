@@ -4,14 +4,17 @@
 
 /**
  * main - multiplies two positive numbers
- * @argc: n arguments
- * @argv: args
- * Return: int
+ * @argc: argument count
+ * @argv: argument vector.
+ * Return: Always 0, if success.
+ * Usage: mul num1 num2
+ * num1 and num2 will be passed in base 10
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-unsigned long mul;
-int i, j;
+	unsigned long mul;
+	int i, j;
+
 	if (argc != 3)
 	{
 		printf("Error\n");
@@ -25,11 +28,11 @@ int i, j;
 			{
 				printf("Error\n");
 				exit(98);
-		       	}
+			}
 		}
 
 	}
-	mul = atol(argv[1]) *atol(argv[2]);
+	mul = atol(argv[1]) * atol(argv[2]);
 	printf("%lu\n", mul);
-return (0);
+	return (0);
 }

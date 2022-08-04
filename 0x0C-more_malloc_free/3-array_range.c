@@ -3,21 +3,24 @@
 
 /**
  * array_range - creates an array of integers
- * @min: minimum
- * @max: maximum
- * Return: array
+ * @min: minimum value
+ * @max: maximum value
+ * Return: the pointer to the newly created array or NULL,
+ * - if min > max and
+ * - if malloc fails.
+ * The created array should contain all the values from min(included)
+ * to max(included), ordered from min to max.
  */
 int *array_range(int min, int max)
 {
-	int *arr, i = 0, t = min;
+	int *ptr, index, index2;
 
 	if (min > max)
-		return (0);
-	arr = malloc((max - min + 1) * sizeof(int));
-
-	if (!arr)
-		return (0);
-	while (i <= max - min)
-		arr[i++] = t++;
-	return (arr);
+		return (NULL);
+	ptr = malloc(sizeof(int) * ((max - min) + 1));
+	if (ptr == NULL)
+		return (NULL);
+	for (index = 0, index2 = min; index2 <= max; index++, index2++)
+		ptr[index] = index2;
+	return (ptr);
 }
