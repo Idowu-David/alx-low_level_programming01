@@ -10,4 +10,7 @@
 #include <stdbool.h>
 #include <sys/stat.h>
 
+
+char *_getenv(const char *name);
+int _strlen(const char *str);
 #endif

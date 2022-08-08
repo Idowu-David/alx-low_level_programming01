@@ -7,44 +7,76 @@
  */
 int main()
 {
-	/*
-	 * get the user's input using getline
-	 * create a fork function that executes everytime a command is inputed
-	 *
-	 */
-	int status = 0;
+	int token_count, index, status = 0;
 	pid_t child_pid;
 	ssize_t count = 0;
 	size_t n;
-	char *av = NULL;
-	while (count != -1)
+	char *copy, *token, *delim = " \n", *buffer = NULL, **argv;
+
+	do
 	{
+		/* get user input using getline */
 		printf("$ ");
-		count = getline(&av, &n, stdin);
+		count = getline(&buffer, &n, stdin);
 		if (count == -1)
 		{
-			perror("Error: ");
+			perror("Error");
 			return (1);
 		}
-		while(status != -1)
+
+		/* duplicate the value of buffer */
+		copy = malloc(sizeof(char) * strlen(buffer));
+		if (copy == NULL)
+			return (1);
+		strcpy(copy, buffer);
+
+		/* tokenize the user input */
+		token = strtok(buffer, delim);
+		token_count = 1;
+		while(token)
 		{
-			child_pid = fork();
-			if (child_pid == -1)
+			token = strtok(NULL, delim);
+			token_count++;
+		}
+
+		/* allocate space for the number of token */
+		argv = malloc(sizeof(char *) * token_count);
+		if (argv == NULL)
+			return (1);
+		
+		/* split buffer(copy) into an array of strins */
+		token = strtok(copy, delim);
+		index = 0;
+		while(token)
+		{
+			argv[index] = malloc(sizeof(char) * strlen(token));
+			if (argv[index] == NULL)
+			{
+				free(argv);
+				return (1);
+			}
+			/* copy the content of token into argv array */
+			strcpy(argv[index], token);
+			index++;
+
+			token = strtok(NULL, delim);
+		}
+		argv[index] = NULL;
+
+		/* Execution */
+		child_pid = fork();
+		if (child_pid == 0)
+		{
+			status = execve(argv[0], argv, NULL);
+			if (status == -1)
 			{
 				perror("Error");
 				return (1);
 			}
-			if (child_pid == 0)
-			{
-				status = execve(av, av, NULL);
-				if (status == -1)
-				{
-					perror("Error: ");
-					return(1);
-				}	
-			}
-			wait(NULL);
 		}
-	}		
+		wait(NULL);
+	}
+	while(count != -1);
+		
 	return (0);
 }
