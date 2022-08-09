@@ -5,6 +5,8 @@
  *
  * Return: Always 0
  */
+
+extern char **environ;
 int main()
 {
 	int token_count, index, status = 0;
@@ -67,7 +69,7 @@ int main()
 		child_pid = fork();
 		if (child_pid == 0)
 		{
-			status = execve(argv[0], argv, NULL);
+			status = execve(argv[0], argv, environ);
 			if (status == -1)
 			{
 				perror("Error");
@@ -82,6 +84,5 @@ int main()
 	for (index = 0; argv[index] != NULL; index++)
 		free(argv[index]);
 	free(argv);
-		
 	return (0);
 }
