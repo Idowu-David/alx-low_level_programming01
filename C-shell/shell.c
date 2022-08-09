@@ -44,7 +44,7 @@ int main()
 		if (argv == NULL)
 			return (1);
 		
-		/* split buffer(copy) into an array of strins */
+		/* split buffer(copy) into an array of strings */
 		token = strtok(copy, delim);
 		index = 0;
 		while(token)
@@ -77,6 +77,11 @@ int main()
 		wait(NULL);
 	}
 	while(count != -1);
+	free(buffer);
+	free(copy);
+	for (index = 0; argv[index] != NULL; index++)
+		free(argv[index]);
+	free(argv);
 		
 	return (0);
 }
