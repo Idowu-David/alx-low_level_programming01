@@ -2,6 +2,9 @@
 
 /**
  * main - a simple UNIX command line interpreter
+ * @ac: argument count
+ * @av: argument vector
+ * @environ: pointer to environment variables
  *
  * Return: Always 0.
 */
@@ -16,7 +19,6 @@ int main(int ac, char **av, char **environ)
 	(void)ac;
 	(void)av;
 	do {
-	/* get user input using getline */
 	_putchar('$');
 	_putchar(' ');
 	count = getline(&buffer, &n, stdin);
@@ -45,8 +47,7 @@ int main(int ac, char **av, char **environ)
 			perror("Error");
 			return (1);
 		}
-	}
-	wait(NULL);
+	} wait(NULL);
 	} while (count != -1);
 	return (0);
 }
