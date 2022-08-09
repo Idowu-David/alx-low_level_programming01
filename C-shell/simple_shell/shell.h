@@ -16,6 +16,5 @@ int _strlen(const char *str);
 int tokenize(char *buffer, char *delim);
 char **buff_split(char *buffer, char *delim, int token_count);
 char *copy_buffer(char *buffer);
-void _execve(const char *pathname, char *const argv[], char *const envp[]);
 
 #endif

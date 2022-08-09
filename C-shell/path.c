@@ -11,13 +11,13 @@ extern char **environ;
 void print_path()
 {
     char *env;
-    int index, clone = 0;
+    int index;
 
     env = _getenv("PATH");
     if (env == NULL)
         return;
     
-    for (index = clone; env[index] != '\0'; index++)
+    for (index = 0; env[index] != '\0'; index++)
     {
         if (env[index] == ':')
         {
