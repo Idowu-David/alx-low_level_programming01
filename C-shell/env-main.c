@@ -5,16 +5,13 @@
  *
  * Return: Always 0.
  */
+extern char **environ;
 int main(int ac, char **av, char **env)
 {
-	unsigned int i;
 	(void)ac;
 	(void)av;
-	i = 0;
-	while (env[i] != NULL)
-	{
-		printf("%s\n", env[i]);
-		i++;
-	}
+
+	printf("Address of env: %p\n", *env);
+	printf("Address of environ: %p\n", *environ);
 	return (0);
 }

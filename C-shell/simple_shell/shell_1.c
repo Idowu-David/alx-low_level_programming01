@@ -35,7 +35,7 @@ int main(int ac, char **av, char **environ)
 	argv = malloc(sizeof(char *) * token_count);
 	if (argv == NULL)
 		return (1);
-	/* split buffer into an array of strings */
+	/* split buffer(copy) into an array of strings */
 	argv = buff_split(copy, delim, token_count);
 	/* Execution with execve function */
 	child_pid = fork();
@@ -115,6 +115,7 @@ char **buff_split(char *buffer, char *delim, int token_count)
 		argv[index] = malloc(sizeof(char) * _strlen(token));
 		if (argv[index] == NULL)
 		{
+			free(argv[index]);
 			free(argv);
 			return (NULL);
 		}
