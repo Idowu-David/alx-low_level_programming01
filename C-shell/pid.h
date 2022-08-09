@@ -13,4 +13,6 @@
 
 char *_getenv(const char *name);
 int _strlen(const char *str);
+void print_path();
+
 #endif

@@ -33,7 +33,10 @@ char *_getenv(const char *name)
 return (NULL);
 }
 
-int main(int ac, char **av)
+
+
+
+/*int main(int ac, char **av)
 {
     char *getEnv;
     
@@ -51,3 +54,4 @@ int main(int ac, char **av)
     printf("%s\n", getEnv);
     return (0);
 }
+*/
