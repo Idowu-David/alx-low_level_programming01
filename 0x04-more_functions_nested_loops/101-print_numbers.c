@@ -1,5 +1,6 @@
 #include "main.h"
 
+
 int _putchar(char c);
 
 /**
@@ -13,24 +14,38 @@ int _putchar(char c);
 
 void print_number(int n)
 {
+	int num, rem, div = 1, clone;
 
-	unsigned int n1 = 0;
-
-	if  (n < 0)
+	clone = n;
+	num = 0;
+	/* get number of times n can be divided by 10 */
+	if (clone != 0)
 	{
-		n1 = -n;
+		while (clone != 0)
+		{
+			clone = clone / 10;
+			num++;
+		}
+		num--;
+		while (num != 0)
+		{
+			div *= 10;
+			num--;
+		}
+	}
+	if (n == 0)
+		_putchar('0');
+	if (n < 0)
+	{
 		_putchar('-');
+		n *= -1;
 	}
-
-	else
+	while (n != 0)
 	{
-		n1 = n;
+		rem = n % div;
+		n /= div;
+		_putchar(n + '0');
+		n = rem;
+		div /= 10;
 	}
-
-	if (n1 / 10)
-	{
-		print_number(n1 / 10);
-	}
-
-	_putchar((n1 % 10) + '0');
 }
