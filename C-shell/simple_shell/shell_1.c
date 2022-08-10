@@ -146,12 +146,3 @@ char *copy_buffer(char *buffer)
 	return (copy);
 }
 
-/******* EXECUTION FUNCTION ***********/
-/**
- * _execve - execute a program
- * @pathname: path to the file to be executed
- * @argv: array of strings containing the program to be executed
- * @envp: environment variables.
- *
- * Return: does not return
-*/
