@@ -14,7 +14,8 @@ int _putchar(char c);
 
 void print_number(int n)
 {
-	unsigned int num, rem, div = 1, clone;
+	unsigned int num, rem, div = 1;
+	int clone;
 
 	clone = n;
 	num = 0;
