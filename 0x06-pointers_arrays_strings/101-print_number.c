@@ -1,35 +1,48 @@
 #include "main.h"
+
 /**
  * print_number - prints an integer.
- * @n: integer.
  *
- * Return: Returns 0, success.
+ * @n:  number to be printed
+ *
+ * Return: void
  */
+
+
 void print_number(int n)
 {
-	if (n / 10 != 0)
+	unsigned int num, rem, div = 1;
+	int clone;
+
+	clone = n;
+	num = 0;
+	if (clone != 0)
 	{
-		print_number(n / 10);
-		if (n > 0)
+		while (clone != 0)
 		{
-			_putchar(n % 10 + '0');
+			clone = clone / 10;
+			num++;
 		}
-		else
+		num--;
+		while (num != 0)
 		{
-			_putchar(-n % 10 + '0');
+			div *= 10;
+			num--;
 		}
 	}
-	else if ((n / 10 == 0) && (n % 10 != 0) && (n > 0))
-	{
-		_putchar(n % 10 + '0');
-	}
-	else if ((n / 10 == 0) && (n % 10 != 0) && (n <= 0))
+	if (n == 0)
+		_putchar('0');
+	if (n < 0)
 	{
 		_putchar('-');
-		_putchar(-n % 10 + '0');
+		n *= -1;
 	}
-	else if (n == 0)
+	while (n != 0)
 	{
-		_putchar('0');
+		rem = n % div;
+		n /= div;
+		_putchar(n + '0');
+		n = rem;
+		div /= 10;
 	}
 }
