@@ -11,15 +11,15 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	int s_index, accept_index;
-	unsigned int count;
+	unsigned int count = 0;
 
 	if(s == NULL || accept == NULL)
 		return (0);
-	for (accept_index = 0; accept[accept_index] != '\0'; accept_index++)
+	for (s_index = 0; s[s_index] != ' '; s_index++)
 	{
-		for (s_index = 0; s[s_index] != ' '; s_index++)
+		for (accept_index = 0; accept[accept_index] != '\0'; accept_index++)
 		{
-			if (accept[accept_index] == s[s_index])
+			if (s[s_index] == accept[accept_index])
 				count++;
 		}
 	}
