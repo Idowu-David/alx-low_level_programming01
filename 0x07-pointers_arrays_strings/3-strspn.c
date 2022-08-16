@@ -13,7 +13,7 @@ unsigned int _strspn(char *s, char *accept)
 	int s_index, accept_index;
 	unsigned int count = 0;
 
-	if(s == NULL || accept == NULL)
+	if (s == NULL || accept == NULL)
 		return (0);
 	for (s_index = 0; s[s_index] != ' '; s_index++)
 	{
