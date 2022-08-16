@@ -1,5 +1,13 @@
 #ifndef MAIN_H
 #define MAIN_H
+
+/* Standard libraries */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+/* Function prototypes */
 int _putchar(char c);
 int _islower(int c);
 int _isalpha(int c);
