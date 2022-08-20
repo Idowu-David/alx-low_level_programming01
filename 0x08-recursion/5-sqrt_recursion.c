@@ -13,22 +13,18 @@
 
 int _is_prime(int num, int checker, int i)
 {
-	if ((num < 0) || (num == 1)) /**
-				      * number less than 0 or
-				      * equal to 1 is not prime
-				      */
+	/* number less than 0 or equal to 1 is not prime */
+	if ((num < 0) || (num == 1))
 		return (0);
-	if (num == checker) /* if number is same as checker,number is prime */
+	/* if number is same as checker,number is prime */
+	if (num == checker)
 		return (1);
-	i = (num % checker); /**
-			      * get the remainder when
-			      * number divides checker
-			      */
-	if (i != 0) /**
-		     * if the remainder is not zero, call the
-		     * function recursively to start all over
-		     * increment checker
-		     */
+	/* get the remainder when num divides checker */
+	i = (num % checker);
+	/*if the remainder is not zero, call the function
+	 * recursively to start all over, increment checker
+	 */
+	if (i != 0)
 		return (_is_prime(num, checker + 1, 1));
  /**
   * if none of the conditions are true, number is not prime

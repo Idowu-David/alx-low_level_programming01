@@ -1,5 +1,12 @@
 #ifndef MAIN_H
 #define MAIN_H
+
+/* Standard Library */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+/* Function prototype */
 int _putchar(char c);
 void _puts_recursion(char *s);
 void _print_rev_recursion(char *s);
@@ -13,4 +20,6 @@ int _is_prime(int num, int checker, int i);
 int is_palindrome(char *s);
 int check_pal(char *s1, char *s2);
 int rev_string(char str[]);
+int palindrome_check(int index, int revStrInd, char *str);
+
 #endif
