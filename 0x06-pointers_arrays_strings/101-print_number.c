@@ -31,13 +31,16 @@ void print_number(int n)
 		}
 	}
 	if (n == 0)
+	{
 		_putchar('0');
+		return;
+	}
 	if (n < 0)
 	{
 		_putchar('-');
 		n *= -1;
 	}
-	while (n != 0)
+	while (div != 0)
 	{
 		rem = n % div;
 		n /= div;
