@@ -26,7 +26,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		{
 			new->n = n;
 			*head = new;
-			return new;
+			return (new);
 		}
 		while (idx > 1)
 		{
@@ -42,7 +42,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 }
 
 /**
- * listint_len - returns the number of elements in a linked list.
+ * list_len - returns the number of elements in a linked list.
  * @h: pointer to head
  *
  * Return: number of elements in the list.
