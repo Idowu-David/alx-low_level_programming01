@@ -1,11 +1,13 @@
 #include "main.h"
 
 /**
- * *_memcpy - copies memory area from src to dest
+ * *_memcpy - copies bytes from memory area
  * @dest: destination which the string is to be copied into
  * @src: source string
  * @n: max byte to copy from src string
  * Return: a pointer to dest.
+ * _memcpy() function copies n bytes from memory area src
+ * to memory area dest.
  */
 
 char *_memcpy(char *dest, char *src, unsigned int n)

@@ -2,10 +2,13 @@
 
 /**
  * *_memset - fills memory with a constant byte.
- * @s: pointer to the constant.
- * @b: constant
- * @n: max byte.
- * Return: s
+ * @s: memory area to be filled
+ * @b: constant byte
+ * @n: maximum byte to fill.
+ * Return: On success, it returns the filled memory.
+ *
+ * _memset() function fills the first n bytes of the memory area
+ * pointed to by s with the constant b.
  */
 
 char *_memset(char *s, char b, unsigned int n)

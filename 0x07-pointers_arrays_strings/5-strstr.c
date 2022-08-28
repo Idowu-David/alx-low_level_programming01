@@ -1,4 +1,3 @@
-
 #include "main.h"
 
 /**
@@ -22,6 +21,8 @@ char *_strstr(char *haystack, char *needle)
 	hay = haystack;
 	n = needle;
 	len = strlen(needle);
+	if (needle == "")
+		return (&haystack[0]);
 	if (haystack != NULL && needle != NULL)
 	{
 		for (indexA = 0; n[indexA] != '\0'; indexA++)
@@ -45,4 +46,12 @@ char *_strstr(char *haystack, char *needle)
 		}
 	}
 	return (NULL);
+}
+
+int main()
+{
+	char *s = "First solve the problem";
+	char *t;
+	t = _strstr(s, "solve");
+	return (0);
 }
