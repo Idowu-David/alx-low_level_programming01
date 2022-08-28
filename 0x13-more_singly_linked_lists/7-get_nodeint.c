@@ -25,12 +25,12 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	ind = listint_len(head);
 	if (index > (ind - 1))
 		return (NULL);
-	while (index > 1)
+	while (index > 0)
 	{
 		ptr = ptr->next;
 		index--;
 	}
-	return (ptr->next);
+	return (ptr);
 }
 
 /**
