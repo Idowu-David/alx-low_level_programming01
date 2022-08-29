@@ -10,28 +10,41 @@
 
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	listint_t *previous = *head;
-	listint_t *current = *head;
+	listint_t *curr = *head;
+	listint_t *prev = *head;
 
-	if (*head == NULL)
-		return (-1);
-	if (index == 0)
+	/* if head points to the last node */
+	if (curr->next == NULL)
 	{
-		*head = current->next;
-		free(current);
-		current = NULL;
+		free(curr);
+		*head = NULL;
+		curr = prev = NULL;
 	}
-	else
+	/* if index is out of range */
+	if (index <= (listint_len(*head) - 1))
 	{
-		while (index > 0)
+		/* to delete the first node */
+		if (index ==  0)
 		{
-			previous = current;
-			current = current->next;
+			*head = curr->next;
+			free(curr);
+			curr = NULL;
+			prev = NULL;
+			return (1);
+		}
+		/* to delete other nodes */
+		while (index > 1)
+		{
+			curr = curr->next;
+			prev = curr;
 			index--;
 		}
-		previous->next = current->next;
-		free(current);
-		current = NULL;
+		curr = curr->next;
+		prev->next = curr->next;
+		free(curr);
+		curr = NULL;
+		return (1);
 	}
-	return (1);
+	/* if index is out of range */
+	return (-1);
 }
