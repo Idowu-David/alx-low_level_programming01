@@ -23,12 +23,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	new->next = NULL;
 	len = list_len(*head);
 	/* add a node at the beginning */
-	if (idx == 0)
-	{
-		new->next = *head;
-		*head = new;
-		return new;
-	}
 	if (idx <= len)
 	{
 		/* if no node is in the linked list */
@@ -36,6 +30,13 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		{
 			*head = new;
 			return (new);
+		}
+		if (idx == 0)
+		{
+			new->next = *head;
+			*head = new;
+			return (new);
+		}
 		while (idx > 1)
 		{
 			ptr = ptr->next;
