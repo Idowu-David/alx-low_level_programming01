@@ -4,6 +4,7 @@
  * insert_dnodeint_at_index - inserts a new node at a given position
  * @h: pointer to pointer to first node of the linked list
  * @idx: index of the list where new node should be added, index starts at 0
+ * @n: data of the new node
  *
  * Return: the address of the new node, or NULL, if it failed.
  */
@@ -19,11 +20,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
-		return NULL;
+		return (NULL);
 	new->n = n;
 	new->next = NULL;
 	new->prev = NULL;
-	
+
 	/* to insert at the beginning */
 	if (idx == 0)
 		return (add_dnodeint(h, data));
