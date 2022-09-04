@@ -16,6 +16,17 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	node_len = dlistint_len(*head);
 	if (index > node_len)
 		return (-1);
+	/* to delete the only node */
+	if (ptr->next == NULL)
+	{
+		printf("Access Last node\n");
+		free(*head);
+		ptr = *head = NULL;
+		printf("Done\n");
+		return (1);
+	}
+	if (*head == NULL)
+		return (-1);
 	/* to delete first node */
 	if (index == 0)
 	{
@@ -32,7 +43,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	}
 	ptr2 = ptr->next;
 	/* to delete last node */
-	if (ptr2->next == NULL)
+	if (ptr->next == NULL)
 	{
 		free(ptr2);
 		ptr2 = ptr->next = NULL;
