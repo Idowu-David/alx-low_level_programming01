@@ -14,15 +14,13 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 	ptr = *head;
 	node_len = dlistint_len(*head);
-	if (index > node_len)
+	if (index >= node_len)
 		return (-1);
 	/* to delete the only node */
 	if (ptr->next == NULL)
 	{
-		printf("Access Last node\n");
 		free(*head);
 		ptr = *head = NULL;
-		printf("Done\n");
 		return (1);
 	}
 	if (*head == NULL)
