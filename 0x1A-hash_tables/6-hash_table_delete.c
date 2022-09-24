@@ -21,9 +21,13 @@ void hash_table_delete(hash_table_t *ht)
                 ptr = ptr->next;
                 free(temp->key);
                 free(temp->value);
+                temp->next = NULL;
                 free(temp);
                 temp = ptr;
             }
         }
+        index++;
     }
+    free(ht->array);
+    free(ht);
 }
