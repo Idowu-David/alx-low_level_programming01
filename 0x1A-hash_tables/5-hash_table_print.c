@@ -56,7 +56,7 @@ int count_nodes(const hash_table_t *ht)
 				ptr = ptr->next;
 			}
 		}
-			
+
 	}
 	return (node);
 }
