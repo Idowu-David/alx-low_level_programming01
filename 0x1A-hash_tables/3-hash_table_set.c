@@ -9,7 +9,7 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *node;
+	hash_node_t *node, *ptr;
 	unsigned int index;
 	char *Null = "";
 
@@ -28,6 +28,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = node;
 	else	/* add new node at the beginning of the linked list */
 	{
+		ptr = ht->array[index];
+		/* traverse through the linked list to check for same key */
+		while(ptr->next != NULL)
+		{
+			if (strcmp(ptr->key, strdup(key)) == 0)
+			{
+				ptr->value = strdup(value);
+				break;
+			}
+			ptr = ptr->next;
+		}
 		node->next = ht->array[index];
 		ht->array[index] = node;
 	}
