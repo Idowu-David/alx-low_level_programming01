@@ -10,6 +10,8 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned int index = 0;
 	int count, i = 0;
 
+	if (ht == NULL)
+		return;
 	count = count_nodes(ht);
 	printf("{");
 	if (ht != NULL)
