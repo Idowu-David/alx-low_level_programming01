@@ -11,7 +11,6 @@ void hash_table_print(const hash_table_t *ht)
 	int count, i = 0;
 
 	count = count_nodes(ht);
-	printf("There are %d nodes\n", count);
 	printf("{");
 	if (ht != NULL)
 	{
