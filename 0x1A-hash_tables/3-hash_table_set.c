@@ -25,30 +25,28 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->next = NULL;
 	index = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[index] == NULL) /* if index is empty */
+	{
+		ht->array[index] = node;
+		return (1);
+	}
+	ptr = ht->array[index];
+		/* traverse through the linked list to check for same key */
+	while (ptr != NULL)
+	{
+		if (strcmp(ptr->key, key) == 0)
 		{
-			ht->array[index] = node;
+			free(ptr->value);
+			ptr->value = strdup(value);
+			free(node->key);
+			free(node->value);
+			free(node);
 			return (1);
 		}
-	else	/* add new node at the beginning of the linked list */
-	{
-		ptr = ht->array[index];
-		/* traverse through the linked list to check for same key */
-		while (ptr != NULL)
-		{
-			if (strcmp(ptr->key, key) == 0)
-			{
-				free(ptr->value);
-				ptr->value = strdup(value);
-				free(node->key);
-				free(node->value);
-				free(node);
-				return (1);
-			}
-			ptr = ptr->next;
+		ptr = ptr->next;
 
-		}
-		node->next = ht->array[index];
-		ht->array[index] = node;
 	}
-	return (1);
+	node->next = ht->array[index];
+	ht->array[index] = node;
+return (1);
 }
+
