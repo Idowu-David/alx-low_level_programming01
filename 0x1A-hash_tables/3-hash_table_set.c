@@ -30,7 +30,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		ptr = ht->array[index];
 		/* traverse through the linked list to check for same key */
-		while (ptr->next != NULL)
+		while (ptr != NULL)
 		{
 			if (strcmp(ptr->key, strdup(key)) == 0)
 			{
