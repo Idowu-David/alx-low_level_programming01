@@ -15,6 +15,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (key == NULL || key == Null || value == NULL || ht == NULL || *key == '\0')
 		return (0);
+
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (0);
@@ -22,22 +23,29 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->key = strdup(key);
 	node->value = strdup(value);
 	node->next = NULL;
-
 	index = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[index] == NULL) /* if index is empty */
-		ht->array[index] = node;
+		{
+			ht->array[index] = node;
+			return (1);
+		}
 	else	/* add new node at the beginning of the linked list */
 	{
 		ptr = ht->array[index];
 		/* traverse through the linked list to check for same key */
 		while (ptr != NULL)
 		{
-			if (strcmp(ptr->key, strdup(key)) == 0)
+			if (strcmp(ptr->key, key) == 0)
 			{
+				free(ptr->value);
 				ptr->value = strdup(value);
-				break;
+				free(node->key);
+				free(node->value);
+				free(node);
+				return (1);
 			}
 			ptr = ptr->next;
+
 		}
 		node->next = ht->array[index];
 		ht->array[index] = node;
